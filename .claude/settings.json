@@ -11,7 +11,17 @@
       "Bash(npm run vercel:*)",
       "Bash(npm publish:*)",
       "Edit(.claude/settings.json)",
-      "Write(.claude/settings.json)"
+      "Write(.claude/settings.json)",
+      "Bash(vercel --prod *)",
+      "Bash(vercel deploy --prod *)",
+      "Bash(vercel deploy --target=production *)",
+      "Bash(vercel deploy --target production *)",
+      "Bash(vercel promote *)",
+      "Bash(vercel rollback *)",
+      "Bash(git push *)"
+    ],
+    "deny": [
+      "Read(./.env*)"
     ]
   }
 }
