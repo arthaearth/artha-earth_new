@@ -58,7 +58,7 @@ export function SiteHeader() {
     <header
       className={[
         "fixed inset-x-0 top-0 z-50 grid items-center px-gutter-sm transition-all duration-300",
-        "grid-cols-[auto_1fr] sm:px-gutter-md lg:grid-cols-[1fr_auto_1fr] lg:px-gutter",
+        "grid-cols-bar-sm sm:px-gutter-md lg:grid-cols-bar lg:px-gutter",
         scrolled ? "h-header-compact" : "h-header",
         bg,
       ].join(" ")}
@@ -73,7 +73,7 @@ export function SiteHeader() {
         ))}
       </nav>
       <div className="flex items-center justify-end gap-5.5">
-        <LangSwitcher languages={LANGS} value={lang} onChange={setLang} className="max-[420px]:hidden" />
+        <LangSwitcher languages={LANGS} value={lang} onChange={setLang} className="max-xs:hidden" />
         <Button href="#contacts" variant="outline" size="sm" className="max-sm:hidden">
           Записатися
         </Button>
@@ -95,7 +95,7 @@ export function SiteHeader() {
             </NavLink>
           ))}
         </nav>
-        <LangSwitcher languages={LANGS} value={lang} onChange={setLang} className="mt-4 min-[421px]:hidden" />
+        <LangSwitcher languages={LANGS} value={lang} onChange={setLang} className="mt-4 xs:hidden" />
         <Button href="#contacts" withArrow onClick={close} tabIndex={open ? 0 : -1} className="mt-6 justify-between">
           Записатися на консультацію
         </Button>

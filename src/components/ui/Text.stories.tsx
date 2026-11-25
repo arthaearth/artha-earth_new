@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { Text } from "./Text";
 
 const meta = {
-  title: "Компоненти/Text",
+  title: "Components/Text",
   component: Text,
   decorators: [(Story) => <div className="max-w-xl"><Story /></div>],
   parameters: {

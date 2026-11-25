@@ -7,7 +7,7 @@ import { Text } from "../ui/Text";
 
 const DIRECTIONS = ["Джйотіш", "Нумерологія", "Васту", "Аюрведа"];
 
-const rays = "pointer-events-none absolute mix-blend-screen h-auto [filter:sepia(1)_saturate(2.4)_hue-rotate(-14deg)_brightness(1.15)] motion-reduce:animate-none";
+const rays = "pointer-events-none absolute mix-blend-screen h-auto rays-tint motion-reduce:animate-none";
 
 /** Перший екран: складається з компонентів системи (Text, Button, Divider) і декору. */
 export function Hero() {
@@ -41,21 +41,21 @@ export function Hero() {
       <div aria-hidden="true" className="absolute inset-0 bg-canvas-deep/50 sm:hidden" />
 
       <Image src="/images/light-rays.png" alt="" width={1254} height={1254} priority
-        className={`${rays} -right-[4%] -top-[6%] w-[40%] max-w-145 origin-[80%_12%] animate-rays-1-sm sm:animate-rays-1`} />
+        className={`${rays} -right-1/25 -top-3/50 w-2/5 max-w-145 origin-rays animate-rays-1-sm sm:animate-rays-1`} />
       <Image src="/images/light-rays.png" alt="" width={1254} height={1254} aria-hidden
-        className={`${rays} right-[3%] -top-[9%] w-[30%] opacity-10 blur-[3px] animate-rays-2-sm sm:animate-rays-2`} />
+        className={`${rays} right-3/100 -top-9/100 w-3/10 opacity-10 blur-xs animate-rays-2-sm sm:animate-rays-2`} />
 
-      <div aria-hidden="true" className="pointer-events-none absolute -right-30 top-yantra-top aspect-yantra w-yantra opacity-15 sm:opacity-35 lg:left-[calc(46.67%+var(--spacing-yantra-offset))] lg:right-auto lg:opacity-60">
-        <div className="absolute inset-0 origin-[50%_48.5%] animate-orbit-cw motion-reduce:animate-none">
+      <div aria-hidden="true" className="pointer-events-none absolute -right-30 top-yantra-top aspect-yantra w-yantra opacity-15 sm:opacity-35 lg:yantra-offset-left lg:right-auto lg:opacity-60">
+        <div className="absolute inset-0 origin-yantra animate-orbit-cw motion-reduce:animate-none">
           <Image src="/images/yantra-glow-clean.png" alt="" fill sizes="570px" priority
-            className="object-contain [filter:url(#smoke-warp-a)] animate-smoke-1 motion-reduce:animate-none" />
+            className="object-contain fx-smoke-a animate-smoke-1 motion-reduce:animate-none" />
         </div>
-        <div className="absolute inset-0 origin-[50%_48.5%] animate-orbit-ccw motion-reduce:animate-none">
+        <div className="absolute inset-0 origin-yantra animate-orbit-ccw motion-reduce:animate-none">
           <Image src="/images/yantra-glow-clean.png" alt="" fill sizes="570px"
-            className="object-contain opacity-60 mix-blend-screen [filter:url(#smoke-warp-b)_blur(2px)] animate-smoke-2 motion-reduce:animate-none" />
+            className="object-contain opacity-60 mix-blend-screen fx-smoke-b animate-smoke-2 motion-reduce:animate-none" />
         </div>
         <SriYantra />
-        <div className="absolute -inset-[22%] mix-blend-screen animate-light motion-reduce:animate-none [background:radial-gradient(ellipse_closest-side_at_74%_26%,color-mix(in_srgb,var(--color-light)_40%,transparent),color-mix(in_srgb,var(--color-light)_14%,transparent)_50%,transparent_100%)]" />
+        <div className="absolute -inset-11/50 mix-blend-screen animate-light motion-reduce:animate-none bg-yantra-light" />
       </div>
       <GoldDust />
 
@@ -76,20 +76,20 @@ export function Hero() {
         </div>
       </div>
 
-      <footer className="relative z-10 grid items-center gap-2 px-gutter-sm pb-4.5 pt-3.5 sm:gap-6 sm:px-gutter-md lg:h-strip lg:grid-cols-[1fr_auto_1fr] lg:px-gutter lg:py-0">
+      <footer className="relative z-10 grid items-center gap-2 px-gutter-sm pb-4.5 pt-3.5 sm:gap-6 sm:px-gutter-md lg:h-strip lg:grid-cols-bar lg:px-gutter lg:py-0">
         <Divider className="absolute inset-x-0 top-0" />
         <span className="whitespace-nowrap text-caption-fluid font-medium uppercase text-ink-soft sm:text-caption">
           Понад 10 років вивчення ведичних наук
         </span>
-        <ul className="flex flex-nowrap gap-[.6em] whitespace-nowrap text-caption-fluid font-medium uppercase text-ink-soft sm:text-caption">
+        <ul className="flex flex-nowrap gap-list whitespace-nowrap text-caption-fluid font-medium uppercase text-ink-soft sm:text-caption">
           {DIRECTIONS.map((d, i) => (
-            <li key={d} className="flex gap-[.6em]">
+            <li key={d} className="flex gap-list">
               {i > 0 && <span aria-hidden="true" className="font-bold text-ink-muted">·</span>}
               {d}
             </li>
           ))}
         </ul>
-        <a href="#services" className="hidden min-h-touch items-center justify-self-end text-caption font-medium tracking-[0.125em] text-accent hover:text-accent-soft focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-soft lg:flex">
+        <a href="#services" className="hidden min-h-touch items-center justify-self-end text-caption font-medium tracking-eyebrow text-accent hover:text-accent-soft focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-soft lg:flex">
           Гортати вниз <span aria-hidden="true" className="ml-1.5">↓</span>
         </a>
       </footer>

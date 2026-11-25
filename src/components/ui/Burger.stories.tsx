@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { Burger } from "./Burger";
 
 const meta = {
-  title: "Компоненти/Burger",
+  title: "Components/Burger",
   component: Burger,
   parameters: {
     docs: {

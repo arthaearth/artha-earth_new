@@ -14,7 +14,7 @@ export function Logo({ href = "#top", className }: { href?: string; className?: 
         .join(" ")}
     >
       <span className="whitespace-nowrap font-display text-logo font-medium">
-        ARTHA <span className="sr-only">&amp;</span><Spiral className="inline-block size-5 -translate-x-px align-[-0.3rem]" /> EARTH
+        ARTHA <span className="sr-only">&amp;</span><Spiral className="relative top-0.5 inline-block size-5 -translate-x-px" /> EARTH
       </span>
       <span className="mt-0.75 text-logo-tag font-medium">VEDIC KNOWLEDGE</span>
     </a>

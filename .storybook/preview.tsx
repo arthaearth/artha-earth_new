@@ -5,7 +5,7 @@ import "../src/app/globals.css";
 const preview: Preview = {
   parameters: {
     layout: "centered",
-    backgrounds: { options: { canvas: { name: "canvas", value: "#173126" } } },
+    backgrounds: { options: { canvas: { name: "canvas", value: "var(--color-canvas)" } } },
     controls: { matchers: { color: /(background|color)$/i, date: /Date$/i } },
     a11y: { test: "error" },
   },

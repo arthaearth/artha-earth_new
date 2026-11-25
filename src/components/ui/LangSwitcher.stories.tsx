@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { LangButton, LangSwitcher } from "./LangSwitcher";
 
 const meta = {
-  title: "Компоненти/LangSwitcher",
+  title: "Components/LangSwitcher",
   component: LangSwitcher,
   args: { languages: ["UA", "RU", "EN"], value: "UA" },
   parameters: {

@@ -3,7 +3,7 @@ import { Hero } from "./Hero";
 import { SiteHeader } from "./SiteHeader";
 
 const meta = {
-  title: "Макети/Перший екран",
+  title: "Layouts/First screen",
   component: Hero,
   parameters: {
     layout: "fullscreen",

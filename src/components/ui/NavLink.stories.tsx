@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { NavLink } from "./NavLink";
 
 const meta = {
-  title: "Компоненти/NavLink",
+  title: "Components/NavLink",
   component: NavLink,
   args: { href: "#about", children: "Про мене" },
   parameters: {
