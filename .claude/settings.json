@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "ask": [
+      "Bash(git push:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git checkout -b:*)",
+      "Bash(git switch -c:*)",
+      "Bash(git branch:*)",
+      "Bash(vercel:*)",
+      "Bash(npx vercel:*)",
+      "Bash(npm run vercel:*)",
+      "Bash(npm publish:*)",
+      "Edit(.claude/settings.json)",
+      "Write(.claude/settings.json)"
+    ]
+  }
+}
