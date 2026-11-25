@@ -45,3 +45,6 @@ storybook-static
 
 # storybook собирається під час білда й публікується разом із сайтом (/storybook)
 /public/storybook/
+
+# попередній проєкт (лише для довідки, не частина цього репозиторію)
+/arthaearth/

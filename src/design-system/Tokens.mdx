@@ -1,0 +1,54 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Дизайн-система/Токени" />
+
+# Токени
+
+Токен — значення з назвою за роллю. Значення живуть **лише** в блоці `@theme` у `src/app/globals.css`; код посилається на імена.
+
+## Кольори
+
+<div className="not-prose grid grid-cols-2 gap-3 sm:grid-cols-3">
+  <div className="bg-canvas p-3 border border-ink-muted text-ink text-body-sm">canvas<br/>фон сторінки</div>
+  <div className="bg-canvas-deep p-3 border border-ink-muted text-ink text-body-sm">canvas-deep<br/>шапка, підкладки</div>
+  <div className="bg-canvas p-3 border border-ink-muted text-ink text-body-sm">ink<br/>головний текст</div>
+  <div className="bg-canvas p-3 border border-ink-muted text-ink-soft text-body-sm">ink-soft<br/>другорядний текст</div>
+  <div className="bg-canvas p-3 border border-ink-muted text-ink-muted text-body-sm">ink-muted<br/>приглушений текст і межа інтерактивних елементів</div>
+  <div className="bg-accent p-3 text-ink-on-accent text-body-sm">accent<br/>золото, ink-on-accent текст</div>
+  <div className="bg-canvas p-3 border border-ink-muted text-accent-soft text-body-sm">accent-soft<br/>фокус, текст контуру</div>
+  <div className="bg-canvas p-3 border border-line text-ink text-body-sm">line<br/>лише декоративні лінії</div>
+</div>
+
+**Правило меж.** `line` — для декоративних ліній (розділювачі, рамки карток). Межа поля форми чи кнопки без заливки — `ink-muted`, видима, контраст ≥ 3:1.
+
+## Типографія
+
+<div className="not-prose flex flex-col gap-3 bg-canvas p-4">
+  <p className="font-display text-display-sm italic text-ink sm:text-display">display</p>
+  <p className="text-lead text-ink-soft">lead — Manrope 20</p>
+  <p className="text-body text-ink-muted">body — Manrope 17</p>
+  <p className="font-display text-quote italic text-accent">quote — Cormorant 25</p>
+  <p className="text-eyebrow font-medium uppercase text-accent">eyebrow</p>
+  <p className="text-nav font-medium uppercase text-ink-soft">nav</p>
+  <p className="text-caption font-medium uppercase text-ink-soft">caption</p>
+</div>
+
+Шрифти: `font-display` (Cormorant Garamond), `font-body` (Manrope).
+
+## Радіуси
+
+`rounded-control` = 0 (гострі кути макета), `rounded-hairline` = 1px.
+
+## Відступи й розміри
+
+| Токен | Значення | Роль |
+| --- | --- | --- |
+| `gutter` / `gutter-md` / `gutter-sm` | 100 / 32 / 20 px | бічне поле: десктоп / планшет / телефон |
+| `header` / `header-compact` | 93 / 76 px | висота шапки |
+| `control` | 54 px | висота кнопки й поля |
+| `touch` | 44 px | мінімальна зона дотику |
+| `strip` | 74 px | нижній рядок першого екрана |
+
+## Пропорції
+
+`aspect-yantra` = 569 / 581, `max-w-hero` = 810 px, `max-w-lead` = 600 px, `max-w-sub` = 584 px. Брейкпоінт `lg` = 1100 px (меню згортається в бургер).

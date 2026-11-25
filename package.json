@@ -12,29 +12,33 @@
     "vercel": "vercel"
   },
   "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/manrope": "^5.3.0",
     "next": "16.4.6",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^10.6.9",
+    "@storybook/addon-docs": "^10.6.9",
+    "@storybook/addon-vitest": "^10.6.9",
+    "@storybook/nextjs-vite": "^10.6.9",
     "@tailwindcss/turbopack": "4.3.3",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.4.6",
-    "tailwindcss": "4.3.3",
-    "typescript": "^5",
-    "storybook": "^10.6.9",
-    "@storybook/nextjs-vite": "^10.6.9",
-    "@storybook/addon-vitest": "^10.6.9",
-    "@storybook/addon-a11y": "^10.6.9",
-    "@storybook/addon-docs": "^10.6.9",
-    "vite": "latest",
-    "vitest": "^4",
     "@vitest/browser-playwright": "^4",
     "@vitest/coverage-v8": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
     "playwright": "latest",
-    "vercel": "latest"
+    "storybook": "^10.6.9",
+    "storybook-addon-pseudo-states": "^10.6.9",
+    "tailwindcss": "4.3.3",
+    "typescript": "^5",
+    "vercel": "latest",
+    "vite": "latest",
+    "vitest": "^4"
   }
 }

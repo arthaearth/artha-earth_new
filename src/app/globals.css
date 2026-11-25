@@ -1,6 +1,153 @@
 @import "tailwindcss";
 
 /*
- * Дизайн-токени будуть тут (@theme): кольори, типографіка, відступи.
- * Поки що — лише база Tailwind без стартової теми create-next-app.
+ * ДИЗАЙН-ТОКЕНИ Artha & Earth.
+ * Єдине місце, де живуть значення кольорів, шрифтів, радіусів, пропорцій і відступів.
+ * Решта коду посилається на токени за іменами (bg-canvas, text-ink, rounded-control…).
+ * Назви за роллю, не за виглядом.
  */
+@theme {
+  /* ---- Кольори: поверхні ---- */
+  --color-canvas: #173126; /* фон сторінки */
+  --color-canvas-deep: #16221d; /* глибша поверхня: шапка, напівпрозорі підкладки */
+
+  /* ---- Кольори: текст ---- */
+  --color-ink: #f3ede0; /* головний текст і заголовки */
+  --color-ink-soft: #d5d8ce; /* другорядний текст: лід, меню */
+  --color-ink-muted: #9fb0a5; /* приглушений текст і МЕЖА інтерактивних елементів (≥ 3:1) */
+  --color-ink-on-accent: var(--color-canvas-deep); /* текст на заливці accent */
+
+  /* ---- Кольори: акцент ---- */
+  --color-accent: #b8975f; /* золото: кнопка, надпис-акцент, цитата */
+  --color-accent-soft: #e6d9bc; /* світле золото: текст кнопки-контуру, фокус, бургер */
+
+  /* ---- Кольори: декоративні лінії та світло ---- */
+  --color-line: #d4a03c; /* ЛИШЕ декоративні лінії: розділювачі, рамки карток, янтра */
+  --color-line-glow: #f6dc9c; /* світла частина золотої лінії */
+  --color-line-deep: #a9792a; /* темна частина золотої лінії */
+  --color-light: #fff7e0; /* відблиски, золотий пил */
+
+  /* ---- Шрифти ---- */
+  --font-display: "Cormorant Garamond", Georgia, serif; /* заголовки, логотип, цитата */
+  --font-body: "Manrope", system-ui, sans-serif; /* інтерфейс і основний текст */
+
+  /* ---- Типографіка: розмір / інтерліньяж / трекінг ---- */
+  --text-display: 5rem;
+  --text-display--line-height: 1.25;
+  --text-display--letter-spacing: -0.065em;
+  --text-display-sm: 3.25rem;
+  --text-display-sm--line-height: 1.25;
+  --text-display-sm--letter-spacing: -0.058em;
+  --text-lead: 1.25rem;
+  --text-lead--line-height: 1.44;
+  --text-lead--letter-spacing: 0.05em;
+  --text-lead-sm: 1.0625rem;
+  --text-lead-sm--line-height: 1.44;
+  --text-lead-sm--letter-spacing: 0.05em;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.76;
+  --text-body--letter-spacing: 0.06em;
+  --text-body-sm: 0.9375rem;
+  --text-body-sm--line-height: 1.76;
+  --text-body-sm--letter-spacing: 0.06em;
+  --text-quote: 1.5625rem;
+  --text-quote--line-height: 1.2;
+  --text-quote--letter-spacing: 0.06em;
+  --text-eyebrow: 1rem;
+  --text-eyebrow--line-height: 1.5;
+  --text-eyebrow--letter-spacing: 0.125em;
+  --text-button: 1.125rem;
+  --text-button--line-height: 1.5;
+  --text-button--letter-spacing: 0.05em;
+  --text-button-sm: 0.875rem;
+  --text-button-sm--line-height: 1.5;
+  --text-button-sm--letter-spacing: 0.08em;
+  --text-nav: 0.9375rem;
+  --text-nav--line-height: 1.5;
+  --text-nav--letter-spacing: 0.088em;
+  --text-caption: 0.875rem;
+  --text-caption--line-height: 1.5;
+  --text-caption--letter-spacing: 0.09em;
+  --text-caption-fluid: clamp(0.5625rem, 2.85vw, 0.75rem);
+  --text-caption-fluid--line-height: 1.5;
+  --text-caption-fluid--letter-spacing: 0.06em;
+  --text-micro: 0.75rem;
+  --text-micro--line-height: 1.5;
+  --text-micro--letter-spacing: 0.075em;
+  --text-logo: 1.375rem;
+  --text-logo--line-height: 1;
+  --text-logo--letter-spacing: 0.12em;
+  --text-logo-tag: 0.375rem;
+  --text-logo-tag--line-height: 1;
+  --text-logo-tag--letter-spacing: 0.26em;
+
+  /* ---- Відступи (база Tailwind 4px лишається; це іменовані ролі) ---- */
+  --spacing-gutter: 6.25rem; /* бічне поле сторінки, десктоп */
+  --spacing-gutter-md: 2rem; /* планшет */
+  --spacing-gutter-sm: 1.25rem; /* телефон */
+  --spacing-header: 5.8125rem; /* висота шапки */
+  --spacing-header-compact: 4.75rem; /* шапка після прокручування */
+  --spacing-strip: 4.625rem; /* нижній рядок першого екрана */
+  --spacing-control: 3.375rem; /* висота основного елемента керування */
+  --spacing-touch: 2.75rem; /* мінімальна зона дотику */
+  --spacing-hero-min: 53.4375rem;
+  --spacing-hero-max: 62.5rem;
+  --spacing-yantra: 35.5625rem;
+  --spacing-yantra-top: 10.5625rem;
+  --spacing-yantra-offset: 5.1875rem;
+
+  /* ---- Пропорції та розміри контейнерів ---- */
+  --aspect-yantra: 569 / 581;
+  --container-hero: 50.625rem;
+  --container-lead: 37.5rem;
+  --container-sub: 36.5rem;
+  --breakpoint-lg: 68.75rem; /* 1100px: де меню згортається в бургер */
+
+  /* ---- Радіуси: макет з гострими кутами ---- */
+  --radius-control: 0px;
+  --radius-hairline: 1px;
+
+  /* ---- Тіні ---- */
+  --shadow-glow: 0 2px 4px color-mix(in srgb, var(--color-accent) 55%, transparent);
+  --shadow-glow-strong: 0 2px 10px color-mix(in srgb, var(--color-accent) 80%, transparent);
+  --shadow-line: 0 0 4px color-mix(in srgb, var(--color-line-glow) 30%, transparent);
+  --shadow-menu: 0 24px 40px color-mix(in srgb, var(--color-canvas-deep) 70%, transparent);
+  --drop-shadow-yantra: 0 0 6px color-mix(in srgb, var(--color-line-glow) 35%, transparent);
+
+  /* ---- Рух ---- */
+  --animate-orbit-cw: orbit-cw 127.6s linear infinite;
+  --animate-orbit-ccw: orbit-ccw 184.8s linear infinite;
+  --animate-smoke-1: smoke-flicker 50.6s linear infinite;
+  --animate-smoke-2: smoke-flicker-2 63.8s linear infinite;
+  --animate-light: light-breathe 37.4s linear infinite, light-drift 57.2s ease-in-out infinite alternate;
+  --animate-rays-1: rays-play 30s ease-in-out infinite alternate;
+  --animate-rays-2: rays-play-2 41s ease-in-out infinite alternate;
+  --animate-rays-1-sm: rays-play-m 30s ease-in-out infinite alternate;
+  --animate-rays-2-sm: rays-play-2-m 41s ease-in-out infinite alternate;
+  --animate-line-glow: line-glow 38s linear infinite;
+
+  @keyframes orbit-cw { to { transform: rotate(360deg); } }
+  @keyframes orbit-ccw { to { transform: rotate(-360deg); } }
+  @keyframes smoke-flicker { 0%, 100% { opacity: 1; } 18% { opacity: .82; } 37% { opacity: .96; } 59% { opacity: .78; } 81% { opacity: .93; } }
+  @keyframes smoke-flicker-2 { 0%, 100% { opacity: .55; } 24% { opacity: .38; } 48% { opacity: .62; } 73% { opacity: .42; } }
+  @keyframes light-breathe { 0%, 100% { opacity: .55; } 12% { opacity: .25; } 31% { opacity: 1; } 49% { opacity: .38; } 67% { opacity: .95; } 85% { opacity: .3; } }
+  @keyframes light-drift { 0% { translate: 70px -60px; scale: .9; } 50% { translate: -20px 10px; scale: 1.12; } 100% { translate: -90px 70px; scale: .95; } }
+  @keyframes rays-play { 0% { transform: rotate(6deg); opacity: .12; } 18% { transform: rotate(8.5deg); opacity: .30; } 37% { transform: rotate(10deg); opacity: .15; } 58% { transform: rotate(12deg); opacity: .34; } 79% { transform: rotate(13.5deg); opacity: .18; } 100% { transform: rotate(14.5deg); opacity: .28; } }
+  @keyframes rays-play-2 { 0% { transform: rotate(1deg) scaleX(-1); opacity: .05; } 35% { transform: rotate(6deg) scaleX(-1); opacity: .20; } 65% { transform: rotate(9deg) scaleX(-1); opacity: .08; } 100% { transform: rotate(12deg) scaleX(-1); opacity: .18; } }
+  @keyframes rays-play-m { 0% { transform: rotate(6deg); opacity: .05; } 18% { transform: rotate(8.5deg); opacity: .12; } 37% { transform: rotate(10deg); opacity: .06; } 58% { transform: rotate(12deg); opacity: .14; } 79% { transform: rotate(13.5deg); opacity: .07; } 100% { transform: rotate(14.5deg); opacity: .12; } }
+  @keyframes rays-play-2-m { 0% { transform: rotate(1deg) scaleX(-1); opacity: .02; } 35% { transform: rotate(6deg) scaleX(-1); opacity: .08; } 65% { transform: rotate(9deg) scaleX(-1); opacity: .03; } 100% { transform: rotate(12deg) scaleX(-1); opacity: .07; } }
+  @keyframes line-glow { 0%, 100% { opacity: .8; } 22% { opacity: 1; } 47% { opacity: .68; } 73% { opacity: .96; } }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
